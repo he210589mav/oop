@@ -3,10 +3,12 @@ class User extends AUser{
 	public $name;
 	public $login;
 	public $password;
+	public static $countUser=0;
 	public function __construct($name,$login,$password){
         $this->name=$name;
 		$this->login=$login;
 		$this->password=$password;
+		++self::$countUser;
 		//$this->showInfo();
 	}
 	public function __clone(){

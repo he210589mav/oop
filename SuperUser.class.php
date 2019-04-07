@@ -1,9 +1,12 @@
 <?php
 class SuperUser extends User implements IsuperUser {
 	public $role;
-	public function __construct($name,$login,$password,$role){
-		parent::__construct($name,$login,$password);
+    public static $countAdmin=0;
+    public function __construct($name,$login,$password,$role){
+		
+        parent::__construct($name,$login,$password);
 		$this->role=$role;
+        ++self::$countAdmin;
 		}
     public function showInfo(){
     	parent::showInfo();
